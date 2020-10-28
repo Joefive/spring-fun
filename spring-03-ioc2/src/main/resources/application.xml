@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDao" class="com.sunrise.dao.UserDao">
+        <!--下标赋值、类型赋值-->
+        <!--<constructor-arg index="0" value="joefive"/>-->
+        <!--<property name="name" value="Spring"/>-->
+        <!--<constructor-arg name="name" type="java.lang.String" value="Joefive"/>-->
+        <constructor-arg name="name" value="JOEFIVE"/>
+    </bean>
+
+    <bean id="user" class="com.sunrise.dao.User">
+
+    </bean>
+
+</beans>
