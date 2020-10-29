@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.sunrise.dao.Student">
+        <!--constructor-arg构造器属性-->
+        <constructor-arg index="0" value="test"/>
+        <constructor-arg index="1" value="19"/>
+        <!--<property name="name" value="张三"/>
+        <property name="age" value="18"/>-->
+    </bean>
+    <!--alias为对应bean的别名，基本没用，可以被name取代-->
+    <alias name="student" alias="xuesheng"/>
+
+    <bean id="teacher" class="com.sunrise.dao.Teacher" name="teacher2">
+        <property name="tcCode" value="1"/>
+        <property name="tcAge" value="19"/>
+        <property name="tcName" value="Hot"/>
+    </bean>
+
+
+</beans>
