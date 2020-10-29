@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.sunrise.pojo.Address"></bean>
+    <bean id="person" class="com.sunrise.pojo.Person">
+        <!--1.普通值注入-->
+        <property name="name" value="石崇"/>
+        <!--2.bean注入使用ref，引用类型，应用次数最多-->
+        <property name="address" ref="address"/>
+        <!--3.数组注入-->
+        <property name="book">
+            <array>
+                <value>《spring实战》</value>
+                <value>《多线程并发》</value>
+            </array>
+        </property>
+        <!--4.List注入-->
+        <property name="hobby">
+            <list>
+                <value>篮球</value>
+                <value>音乐</value>
+                <value>旅游</value>
+            </list>
+        </property>
+        <!--5.Map注入-->
+        <property name="card">
+            <map>
+                <entry key="1" value="京东VIP卡"/>
+                <entry key="2" value="苏宁VIP卡"/>
+                <entry key="3" value="唯品会VIP卡"/>
+            </map>
+        </property>
+        <!--6.Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="url">127.0.0.1:3389/db1</prop>
+                <prop key="user">root</prop>
+                <prop key="psd">root</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
