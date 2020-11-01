@@ -34,7 +34,7 @@
         <!--6.Properties注入-->
         <property name="info">
             <props>
-                <prop key="url">127.0.0.1:3389/db1</prop>
+                <prop key="url">jdbc:mysql://127.0.0.1:3389/db1</prop>
                 <prop key="user">root</prop>
                 <prop key="psd">root</prop>
             </props>

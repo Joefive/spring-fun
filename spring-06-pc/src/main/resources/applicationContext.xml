@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--个性化p代表属性，c代表构造函数-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="manAo" class="com.sunrise.applogic.ManAo"/>
+    <bean id="manImpl" class="com.sunrise.interaction.impl.ManImpl">
+        <property name="manAo" ref="manAo"/>
+    </bean>
+    <!--使用p标签进行实例化对象-->
+    <bean id="manImpl2" class="com.sunrise.interaction.impl.ManImpl" p:manAo="manAo" p:manAo-ref="manAo"/>
+
+    <bean id="manImpl3" class="com.sunrise.interaction.impl.ManImpl"/>
+
+    <!--使用c、p标签，增加scope作用于属性:singleton单例模式(1个实例)，prototype原型模式(单独实例)-->
+    <bean id="user" class="com.sunrise.applogic.User" p:name="四代目" scope="prototype"/>
+    <bean id="user2" class="com.sunrise.applogic.User" c:name="三代目"/>
+
+</beans>
