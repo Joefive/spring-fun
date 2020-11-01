@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--配置介绍-->
     <bean id="student" class="com.sunrise.dao.Student">
         <!--constructor-arg构造器属性-->
         <constructor-arg index="0" value="test"/>
@@ -18,6 +19,8 @@
         <property name="tcAge" value="19"/>
         <property name="tcName" value="Hot"/>
     </bean>
+
+    <!--import多人开发时使用，多人的配置文件合并到最终的applicationContext.xml中-->
 
 
 </beans>
