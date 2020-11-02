@@ -11,6 +11,9 @@
     <modules>
         <module>spring-01-ioc</module>
         <module>spring-02-helloworld</module>
+        <module>spring-07-autowired</module>
+        <module>spring-08-annotation</module>
+        <module>spring-09-annotateconfig</module>
     </modules>
 
     <dependencies>
@@ -19,6 +22,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>5.2.9.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

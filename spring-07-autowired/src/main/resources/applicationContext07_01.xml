@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--个性化p代表属性，c代表构造函数-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="cat" class="com.sunrise.pojo.Cat"/>
+    <bean id="dog2" class="com.sunrise.pojo.Dog"/>
+
+    &lt;!&ndash;自动装配原理
+        byName根据配置文件中bean的id去寻找是否有对应的属性可以注入
+        byType根据上下文，保证class唯一，并且属性一致，可以省略id
+    &ndash;&gt;
+    <bean id="people" class="com.sunrise.pojo.People" autowire="byType">
+        <property name="name" value="张三"/>
+        &lt;!&ndash;start可以通过自动装配来寻找，简化配置属性
+        <property name="cat" ref="cat"/>
+        <property name="dog" ref="dog"/>
+        end&ndash;&gt;
+    </bean>-->
+
+</beans>
