@@ -14,6 +14,7 @@
         <module>spring-07-autowired</module>
         <module>spring-08-annotation</module>
         <module>spring-09-annotateconfig</module>
+        <module>spring-10-proxy</module>
     </modules>
 
     <dependencies>
