@@ -10,12 +10,13 @@
         <module name="spring-05-di" />
         <module name="spring-06-pc" />
         <module name="spring-08-annotation" />
+        <module name="spring-04-ioc3" />
         <module name="spring-09-annotateconfig" />
         <module name="spring-07-autowired" />
-        <module name="spring-02-helloworld" />
         <module name="spring-10-proxy" />
         <module name="spring-03-ioc2" />
-        <module name="spring-04-ioc3" />
+        <module name="spring-02-helloworld" />
+        <module name="spring-11-aop1" />
       </profile>
     </annotationProcessing>
   </component>

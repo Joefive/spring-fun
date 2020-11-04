@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--注册bean-->
+    <bean id="userService" class="com.sunrise.service.UserServiceImpl"/>
+    <bean id="beforeLog" class="com.sunrise.log.BeforeLog"/>
+    <bean id="afterLog" class="com.sunrise.log.AfterLog"/>
+    <!--方法1使用原生态SPRING-API-->
+    <!--配置aop相关约束-->
+<!--    <aop:config>
+        &lt;!&ndash;切入点：需要再哪里执行,expression表达式execution是需要执行的位置(* * * * *)返回的类型|返回包名|方法名|参数&ndash;&gt;
+        <aop:pointcut id="pointcut" expression="execution(* com.sunrise.service.UserServiceImpl.*(..))"/>
+        &lt;!&ndash;执行环绕增加&ndash;&gt;
+        &lt;!&ndash;把beforeLog类增加到切入点&ndash;&gt;
+        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>
+        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut" />
+
+    </aop:config>-->
+
+    <!--方式二-->
+<!--    <bean id="diy" class="com.sunrise.diy.Diy"/>
+    <aop:config>
+        &lt;!&ndash;切面类，ref指向要引用的类&ndash;&gt;
+        <aop:aspect ref="diy">
+            &lt;!&ndash;设置切入点&ndash;&gt;
+            <aop:pointcut id="pointcut" expression="execution(* com.sunrise.service.UserServiceImpl.*(..))"/>
+            &lt;!&ndash;设置通知,通过切面类来控制执行前、执行后方法&ndash;&gt;
+            <aop:before method="before" pointcut-ref="pointcut"/>
+            <aop:after method="after" pointcut-ref="pointcut"/>
+
+        </aop:aspect>
+    </aop:config>-->
+    <!--方式三-->
+    <bean id="annotationPointCut" class="com.sunrise.diy.AnnotationPointCut"/>
+    <!--增加AOP自动注解标签 默认JDK(proxy-target-class="false")可省略、设置为(proxy-target-class="true")使用cglib方式-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+</beans>
